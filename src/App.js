@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import AddQuote from './component/AddQuote';
+import SearchQuote from './component/SearchQuote';
+import DeleteQuote from './component/DeleteQuote';
+import ViewAll from './component/ViewAll';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<AddQuote/>}/>
+        <Route path='/search' element={<SearchQuote/>}/>
+        <Route path='/delete' element={<DeleteQuote/>}/>
+        <Route path='/view' element={<ViewAll/>}/>
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
